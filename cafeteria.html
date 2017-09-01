@@ -5,24 +5,24 @@
 		<script src="./jquery-3.2.1.min.js"></script>
 		<script src="./produtos.js"></script>
 		<script>
-			$(function(){
-			console.log(prodpornome(4));
-			$.each(produtos,function(indice,produto){
-			$('.produto')
-			.append("<tr><td>"+produto.nome+"</td><td>"+produto.preco+"</td><td>"+ "<button name=\"prod_"+produto.id+"class=\"adicionar\">+</button></td></tr>")
-			});
+			
+			$( function(){
+				$.each(produtos,function(indice,produto){
+					$('.produto')
+						.append("<tr><td>"+produto.nome+"</td><td>"+produto.preco+"</td><td>"+ "<button name=\"prod_"+produto.id+"class=\"adicionar\">+</button></td></tr>")
+				});
 			});
 			
 			function prodpornome(id){
-			var retorno=null;
-			$.each(produtos,function(indice,produto){
-			if(id==produto.id)
-			{
-			 retorno=produto;
+				var retorno=null;
+				$.each(produtos,function(indice,produto){
+					if(id==produto.id){
+						retorno=produto;
+					}
+				});
+				return retorno;
 			}
-			});
-			return retorno;
-			}
+			
 		</script>
 		</head>
 		<body>
