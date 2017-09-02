@@ -3,29 +3,43 @@
 		<meta charset="utf-8" />
 		<head>
 		<script src="./jquery-3.2.1.min.js"></script>
-		<script src="./produtos.js"></script>
-		<script>
-			
-			$( function(){
-				$.each(produtos,function(indice,produto){
-					$('.produto')
-						.append("<tr><td>"+produto.nome+"</td><td>"+produto.preco+"</td><td>"+ "<button name=\"prod_"+produto.id+"class=\"adicionar\">+</button></td></tr>")
-				});
-			});
-			
-			function prodpornome(id){
-				var retorno=null;
-				$.each(produtos,function(indice,produto){
-					if(id==produto.id){
-						retorno=produto;
-					}
-				});
-				return retorno;
-			}
-			
-		</script>
-		</head>
-		<body>
+ 		<script src="./produtos.js"></script>
+ 		<script>
+-			$(function(){
+-			console.log(prodpornome(4));
+-			$.each(produtos,function(indice,produto){
+-			$('.produto')
+-			.append("<tr><td>"+produto.nome+"</td><td>"+produto.preco+"</td><td>"+ "<button name=\"prod_"+produto.id+"class=\"adicionar\">+</button></td></tr>")
+-			});
++			
++			$( function(){
++				$.each(produtos,function(indice,produto){
++					$('.produto')
++						.append("<tr><td>"+produto.nome+"</td><td>"+produto.preco+"</td><td>"+ "<button name=\"prod_"+produto.id+"class=\"adicionar\">+</button></td></tr>")
++				});
+ 			});
+ 			
+ 			function prodpornome(id){
+-			var retorno=null;
+-			$.each(produtos,function(indice,produto){
+-			if(id==produto.id)
+-			{
+-			 retorno=produto;
+-			}
+-			});
+-			return retorno;
++				var retorno=null;
++				$.each(produtos,function(indice,produto){
++					if(id==produto.id){
++						retorno=produto;
++					}
++				});
++				return retorno;
+ 			}
++			
+ 		</script>
+ 		</head>
+ 		<body>
 			<table border="1" >
 				<thead>
 					<tr>
